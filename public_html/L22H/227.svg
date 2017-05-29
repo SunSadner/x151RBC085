@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>AJAX:Arturs Aboltins</title>
+</head>
+<body>
+Ludzu ievadi apliecibas numuru:
+<form name=main_form>
+<inputtype="text" name="student_id" value="0" size="9">
+<input type=button onClick="button();" value="start" title="start">
+</form>
+
+Studenta dati ir <span id="result_span" style="color:red"> - </span>
+</body>
+</html>
+
+<!--===============================================-->
+<script type="text/javascript">
+//---------------------------------------------
+// Sutam pieprasijumu datu piegadatajam
+function xml_http_post(url, data, callback) {
+    var req = new XMLHttpRequest();
+    req.open("POST", url ,true);
+    req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+            callback(req);
+
+
+

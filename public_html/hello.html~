@@ -1,0 +1,17 @@
+<html>
+<body>
+<img src="https://lh3.ggpht.com/vqKa5XeIG6W51gLV-wG_-DfX20FJxGxOw4-AoDQOJAzCqFeoED50-gabK94PFnWbHf8=w300">
+<h1 onclick="marts('sekcija');"> CLICK ME </h1>
+<h2 onclick="marts(this)"> YES </h2>
+<div id="sekcija" onclick="marts(this)"> +1 </div>
+</body>
+
+<script>
+function marts(obj) {
+        var adr = document.getElementById(obj);
+        adr.innerHTML='OK'
+}
+</script>
+
+</html>
+

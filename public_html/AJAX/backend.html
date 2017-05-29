@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>AJAX:Nikita Afanasjevs</title>
+</head>
+<body>
+Ievadiet apliecibas numuru
+<form name=main_form>
+<input type="text" name="student_id" value="0" size="9">
+<input type=button onClick="button();"value="start" title="start!">
+</form>
+
+Studenta dati ir <span id="151RBC085" style="color:green"> - </span>
+</body>
+</html>
+
+<!--===============================================-->
+<script type="text/javascript">
+//---------------------------------------------
+// Sutam pieprasijumu datu piegadatajam
+function xml_http_post(url,data,callback) {
+	var req=new XMLHttpRequest();
+	req.open("POST",url,true);
+	req.onreadystatechange=function() {
+	    if(req.readyState==4) {
+		callback(req);
+            }		
+	}
+	req.send(data);
+}
+//---------------------------------------------
+// Apstradajam pogas spiedienu nosutot pieprasijumu uz pareizu URL
+function button_press() {
+	var data = document.main_form.student_id.value;
+	var port='10' + data.slice(-3);
+	xml_http_post("http://213.175.92.37:"+port,data,display_res)
+}
+//---------------------------------------------
+// Attelojam rezultatu
+function display_result(req) {
+	var elem = document.getElementById('result_span')
+	elem.innerHTML = req.responseText
+}
+</script>

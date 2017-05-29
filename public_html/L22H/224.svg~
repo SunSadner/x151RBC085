@@ -1,0 +1,10 @@
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+ <svg height="500" width="500">
+  <circle cx="70" cy="70" r="60" stroke="blue" stroke-width="3" fill="green" />
+</svg> 
+
+<text x="50" y="70" fill="#FFFFFF">
+Circle </text>
+</svg>

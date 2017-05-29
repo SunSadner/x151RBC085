@@ -1,0 +1,28 @@
+from BaseHTTPServer import BaseHttpRequestHandler,HTTPServer
+import SimpleHTTPServer
+
+PORT = 10058
+
+class AjaxHandler(simpleHTTPServer.SimpleHTTPRequestHandler):
+   """The test example handler.""
+
+   def do_POST(self):
+       """Handle a post request by returning the square of the number.
+          """
+       self.send_response(200)
+       self.send_header('Content-type','text/html')
+       self.send_header('Access-Control-Allow-Origin','*')	
+       self.end_headers()
+       # Send the thml message
+       self.wfile.erite("Nikita Afanasjevs, 151RBC085"
+       return
+
+try: 
+    server = HTTPServer(('', PORT), AjaxHandler)
+    print 'Started AJAX handler on port' , PORT
+    server.serve_forever()
+
+except KeyboardInterrupt: 	
+    print '^C recieved, shutting down the web srever'
+    server.socket.close()
+
